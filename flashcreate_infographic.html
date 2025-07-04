@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashCreate: The Macro Loop Model</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F3F4F6;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flowchart-step {
+            position: relative;
+            flex: 1;
+            min-width: 160px;
+        }
+        .flowchart-step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -24px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: #418FF1;
+        }
+        @media (max-width: 1023px) {
+            .flowchart-step:not(:last-child)::after {
+                content: '↓';
+                right: 50%;
+                top: 100%;
+                transform: translateX(50%);
+                margin-top: 8px;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-[#004AAD] text-white text-center py-12 px-4">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-2">FlashCreate's Loop Execution Model</h1>
+        <p class="text-xl md:text-2xl font-light text-blue-200">One Loop. Many Hands. One Outcome: Win Together.</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+        
+        <section id="products" class="mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-[#004AAD]">What We're Selling</h2>
+                <p class="text-lg text-gray-600 mt-2">A suite of services designed to help businesses grow online and look great doing it.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <div class="text-4xl mb-2">📢</div>
+                    <h3 class="font-bold text-lg">Promorang</h3>
+                    <p class="text-sm text-gray-500">Social earning platform</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <div class="text-4xl mb-2">📈</div>
+                    <h3 class="font-bold text-lg">Social Media</h3>
+                    <p class="text-sm text-gray-500">Page management & campaigns</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <div class="text-4xl mb-2">🎨</div>
+                    <h3 class="font-bold text-lg">Graphics</h3>
+                    <p class="text-sm text-gray-500">Static & motion design</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <div class="text-4xl mb-2">💻</div>
+                    <h3 class="font-bold text-lg">Websites</h3>
+                    <p class="text-sm text-gray-500">Landing pages & e-commerce</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow col-span-2 md:col-span-1">
+                    <div class="text-4xl mb-2">🔗</div>
+                    <h3 class="font-bold text-lg">UTM Setup</h3>
+                    <p class="text-sm text-gray-500">Campaign tracking</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="flow" class="mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-[#004AAD]">The Operational Flow</h2>
+                <p class="text-lg text-gray-600 mt-2">A simple, effective path from promise to results.</p>
+            </div>
+            <div class="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-12">
+                <div class="flowchart-step bg-white p-4 rounded-lg shadow-md text-center">
+                    <div class="text-2xl font-bold text-blue-500 mb-2">1</div>
+                    <h3 class="font-semibold">Sales Sends Offer</h3>
+                    <p class="text-sm text-gray-500">Opens the door to new opportunities.</p>
+                </div>
+                <div class="flowchart-step bg-white p-4 rounded-lg shadow-md text-center">
+                    <div class="text-2xl font-bold text-blue-500 mb-2">2</div>
+                    <h3 class="font-semibold">Creative Makes It Ready</h3>
+                    <p class="text-sm text-gray-500">Builds trust and legitimacy.</p>
+                </div>
+                <div class="flowchart-step bg-white p-4 rounded-lg shadow-md text-center">
+                    <div class="text-2xl font-bold text-blue-500 mb-2">3</div>
+                    <h3 class="font-semibold">Support Organizes</h3>
+                    <p class="text-sm text-gray-500">Keeps the system running smoothly.</p>
+                </div>
+                <div class="flowchart-step bg-white p-4 rounded-lg shadow-md text-center">
+                    <div class="text-2xl font-bold text-blue-500 mb-2">4</div>
+                    <h3 class="font-semibold">Fulfillment Delivers</h3>
+                    <p class="text-sm text-gray-500">Turns promises into tangible results.</p>
+                </div>
+                 <div class="flowchart-step bg-white p-4 rounded-lg shadow-md text-center">
+                    <div class="text-2xl font-bold text-blue-500 mb-2">5</div>
+                    <h3 class="font-semibold">Strategist Aligns</h3>
+                    <p class="text-sm text-gray-500">Ensures the team stays sharp and focused.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="payout" class="mb-12">
+             <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-[#004AAD]">Rewarding Performance: The Payout Logic</h2>
+                <p class="text-lg text-gray-600 mt-2">A fair, transparent system based on output, not just hours.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                <div class="lg:col-span-2 bg-white p-6 rounded-lg shadow-lg flex flex-col justify-center">
+                    <h3 class="text-xl font-bold text-center mb-4">Revenue Distribution Model</h3>
+                    <p class="text-center text-gray-600 mb-4">For every JMD $20,000 in revenue, the distribution is structured to ensure sustainability and reward contribution.</p>
+                    <div class="chart-container max-w-sm mx-auto h-64 md:h-80">
+                        <canvas id="revenueSplitChart"></canvas>
+                    </div>
+                </div>
+                <div class="lg:col-span-3 bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-center mb-4">Team Loop Payout Pool Breakdown (45%)</h3>
+                    <p class="text-center text-gray-600 mb-4">The team's share is allocated to roles based on their direct impact on the loop's success.</p>
+                    <div class="chart-container h-80 md:h-[400px]">
+                        <canvas id="payoutPoolChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="loops" class="mb-12">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-[#004AAD]">The Macro Loops: Our Engines of Growth</h2>
+                <p class="text-lg text-gray-600 mt-2">Each loop is a strategic project with clear objectives and success criteria.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                    <h3 class="text-xl font-bold mb-2">Subscriber Engine</h3>
+                    <p class="text-gray-600 mb-4 flex-grow">Acquire new users, convert to premium, and generate high-referral velocity.</p>
+                    <div class="border-t pt-4 mt-4">
+                        <p class="font-semibold text-lg text-blue-600">1,000</p>
+                        <p class="text-sm text-gray-500">New User Signups</p>
+                    </div>
+                     <div class="pt-2">
+                        <p class="font-semibold text-lg text-blue-600">150</p>
+                        <p class="text-sm text-gray-500">Premium Upgrades</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                    <h3 class="text-xl font-bold mb-2">Campaign Intake Engine</h3>
+                    <p class="text-gray-600 mb-4 flex-grow">Acquire and activate merchants to run task campaigns and engage PromoPush services.</p>
+                     <div class="border-t pt-4 mt-4">
+                        <p class="font-semibold text-lg text-blue-600">JMD $12,000+</p>
+                        <p class="text-sm text-gray-500">Merchant Campaign Sales</p>
+                    </div>
+                     <div class="pt-2">
+                        <p class="font-semibold text-lg text-blue-600">30</p>
+                        <p class="text-sm text-gray-500">Live Campaigns Posted</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                    <h3 class="text-xl font-bold mb-2">Engagement Monetizer</h3>
+                    <p class="text-gray-600 mb-4 flex-grow">Maximize user engagement through UGC projects, challenges, and PromoShare Club activities.</p>
+                     <div class="border-t pt-4 mt-4">
+                        <p class="font-semibold text-lg text-blue-600">3,000</p>
+                        <p class="text-sm text-gray-500">Bounty Entries</p>
+                    </div>
+                     <div class="pt-2">
+                        <p class="font-semibold text-lg text-blue-600">5,000+</p>
+                        <p class="text-sm text-gray-500">Post Shares</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                    <h3 class="text-xl font-bold mb-2">Paid Visibility Engine</h3>
+                    <p class="text-gray-600 mb-4 flex-grow">Sell sponsored campaigns, content ads, and placements through Promorang channels.</p>
+                     <div class="border-t pt-4 mt-4">
+                        <p class="font-semibold text-lg text-blue-600">JMD $4,000+</p>
+                        <p class="text-sm text-gray-500">Ad Sales Revenue</p>
+                    </div>
+                     <div class="pt-2">
+                        <p class="font-semibold text-lg text-blue-600">8,000+</p>
+                        <p class="text-sm text-gray-500">Link Clicks on Campaigns</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                    <h3 class="text-xl font-bold mb-2">Fulfillment Engine</h3>
+                    <p class="text-gray-600 mb-4 flex-grow">Deliver high-quality design, video, dev, and content services for clients.</p>
+                    <div class="border-t pt-4 mt-4">
+                        <p class="font-semibold text-lg text-blue-600">&ge;95%</p>
+                        <p class="text-sm text-gray-500">Average QA Score</p>
+                    </div>
+                     <div class="pt-2">
+                        <p class="font-semibold text-lg text-blue-600">&lt;72 hours</p>
+                        <p class="text-sm text-gray-500">Average Turnaround</p>
+                    </div>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md flex flex-col">
+                    <h3 class="text-xl font-bold mb-2">Referral Flywheel</h3>
+                    <p class="text-gray-600 mb-4 flex-grow">Trigger user-led exponential growth via a matrix referral system and tiered incentives.</p>
+                    <div class="border-t pt-4 mt-4">
+                        <p class="font-semibold text-lg text-blue-600">500</p>
+                        <p class="text-sm text-gray-500">New Users Referred</p>
+                    </div>
+                     <div class="pt-2">
+                        <p class="font-semibold text-lg text-blue-600">20</p>
+                        <p class="text-sm text-gray-500">Loop Leaders (10+ Referrals)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="text-center p-6 bg-gray-800 text-white">
+        <p>&copy; 2025 FlashCreate. All Rights Reserved.</p>
+        <p class="text-sm text-gray-400 mt-1">Driving Growth Through Strategic Execution.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const brilliantBlues = ['#004AAD', '#0062D5', '#418FF1', '#81B5F3', '#B2D3F8', '#1F2937'];
+            
+            const tooltipCallback = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    },
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            color: '#4B5563',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                }
+            };
+
+            const wrapLabel = (label, maxLength) => {
+                if (label.length <= maxLength) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + word).length > maxLength) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
+                    }
+                    currentLine += word + ' ';
+                });
+                lines.push(currentLine.trim());
+                return lines;
+            };
+
+            const revenueSplitCtx = document.getElementById('revenueSplitChart').getContext('2d');
+            new Chart(revenueSplitCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Team Payout Pool', 'System Deductions'],
+                    datasets: [{
+                        label: 'Revenue Split',
+                        data: [45, 55],
+                        backgroundColor: [brilliantBlues[1], brilliantBlues[4]],
+                        borderColor: '#FFFFFF',
+                        borderWidth: 4,
+                        hoverOffset: 8
+                    }]
+                },
+                options: {
+                    ...tooltipCallback,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '60%',
+                }
+            });
+
+            const payoutPoolCtx = document.getElementById('payoutPoolChart').getContext('2d');
+            const payoutLabels = ['Sales Pod', 'Fulfillment Pod', 'Strategist (Signal)', 'Tactical Lead (Atlas)', 'Chief of Staff (Halo)', 'Treasury Rollover'];
+            new Chart(payoutPoolCtx, {
+                type: 'bar',
+                data: {
+                    labels: payoutLabels.map(label => wrapLabel(label, 16)),
+                    datasets: [{
+                        label: '% of Payout Pool',
+                        data: [45, 25, 10, 10, 5, 5],
+                        backgroundColor: brilliantBlues,
+                        borderColor: brilliantBlues.map(c => c + 'B3'),
+                        borderWidth: 1,
+                        borderRadius: 5,
+                    }]
+                },
+                options: {
+                    ...tooltipCallback,
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Percentage (%)',
+                                color: '#4B5563'
+                            },
+                             grid: {
+                                display: false
+                            }
+                        },
+                        y: {
+                             grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+
+        });
+    </script>
+
+</body>
+</html>
